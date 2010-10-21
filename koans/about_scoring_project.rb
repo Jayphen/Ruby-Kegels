@@ -47,12 +47,8 @@ def score(dice)
   
   # process the twosomes and the desperate singles
   dice.each do |roll|
-    if roll == 1 
-      points += 100
-    end
-    if roll == 5 
-      points += 50
-    end
+    if roll == 1 then points += 100 end
+    if roll == 5 then points += 50 end
   end
   
   points
