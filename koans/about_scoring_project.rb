@@ -49,8 +49,8 @@ def score(dice)
     # is this too ugly?
     # points += roll == 1 ? 100 : roll == 5 ? 50 : 0
     # this is prettier
-    if roll == 1 then points += 100 end
-    if roll == 5 then points += 50 end
+    points += 100 if roll == 1
+    points += 50 if roll == 5
   end
   
   points
