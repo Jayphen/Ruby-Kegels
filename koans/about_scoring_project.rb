@@ -44,13 +44,15 @@ def score(dice)
       3.times { dice.shift }
     end
   end
+  
   # process the twosomes and the desperate singles
   dice.each do |roll|
-    # is this too ugly?
-    # points += roll == 1 ? 100 : roll == 5 ? 50 : 0
-    # this is prettier
-    points += 100 if roll == 1
-    points += 50 if roll == 5
+    if roll == 1 
+      points += 100
+    end
+    if roll == 5 
+      points += 50
+    end
   end
   
   points
