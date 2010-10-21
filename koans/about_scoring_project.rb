@@ -30,7 +30,30 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 # Your goal is to write the score method.
 
 def score(dice)
-  # You need to write this method
+  points = 0
+  return points unless dice.length > 0
+  
+  # get those triples all buddied up
+  dice.sort!
+  
+  dice.each_with_index do |roll, index|
+    # if the current roll matches the next two rolls then
+    if roll == dice[index + 1] and roll == dice[index + 2] then
+      points += roll == 1 ? 1000 : roll * 100
+      # we've processed the triples, so make them go away now
+      3.times do dice.shift end
+    end
+  end
+  # process the twosomes and the desperate singles
+  dice.each do |roll|
+    # is this too ugly?
+    # points += roll == 1 ? 100 : roll == 5 ? 50 : 0
+    # this is prettier
+    if roll == 1 then points += 100 end
+    if roll == 5 then points += 50 end
+  end
+  
+  points
 end
 
 class AboutScoringProject < EdgeCase::Koan
