@@ -3,3 +3,5 @@ My own journey along the path to enlightenment.
 Check out http://github.com/edgecase/ruby_koans.
 
 Mountains are again merely mountains.
+
+[..................................X_______________] 184/269
