@@ -38,10 +38,10 @@ def score(dice)
   
   dice.each_with_index do |roll, index|
     # if the current roll matches the next two rolls then
-    if roll == dice[index + 1] and roll == dice[index + 2] then
+    if roll == dice[index + 1] && roll == dice[index + 2]
       points += roll == 1 ? 1000 : roll * 100
       # we've processed the triples, so make them go away now
-      3.times do dice.shift end
+      3.times { dice.shift }
     end
   end
   # process the twosomes and the desperate singles
